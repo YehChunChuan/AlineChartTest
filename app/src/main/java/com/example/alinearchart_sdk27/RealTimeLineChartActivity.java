@@ -1,6 +1,7 @@
 package com.example.alinearchart_sdk27;
 
 import android.app.Activity;
+import android.content.res.Configuration;
 import android.graphics.Color;
 import android.os.Bundle;
 import android.os.Handler;
@@ -111,5 +112,18 @@ public class  RealTimeLineChartActivity extends Activity {
             }
         }
     };
+
+    @Override
+    public void onConfigurationChanged(Configuration newConfig) {
+        // TODO Auto-generated method stub
+        super.onConfigurationChanged(newConfig);
+        if (newConfig.orientation == Configuration.ORIENTATION_LANDSCAPE) {
+            // 什麼都不用寫
+            //12313
+        }
+        else {
+            // 什麼都不用寫
+        }
+    }
 
 }//end with MainActivity
