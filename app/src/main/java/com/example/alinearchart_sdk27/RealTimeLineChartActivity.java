@@ -6,6 +6,7 @@ import android.graphics.Color;
 import android.os.Bundle;
 import android.os.Handler;
 import android.os.Message;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 
@@ -30,14 +31,8 @@ public class  RealTimeLineChartActivity extends Activity {
 
         x_index = 110;//初始化X軸的刻度值
         random = new Random();
-    };
 
-    @Override
-    protected void onResume() //在本頁面onStart()之後設定為繪圖所在的頁面
-    {
-        super.onResume();
-
-        //設定圖表顯示頁面為本頁面
+                //設定圖表顯示頁面為本頁面
         mLineChart.setChartViewActivity(this);
 
         //新增4條折線
@@ -45,6 +40,22 @@ public class  RealTimeLineChartActivity extends Activity {
         mLineChart.addLineToChart("折線B", PointStyle.DIAMOND, Color.GREEN);//新增折線B
         mLineChart.addLineToChart("折線C", PointStyle.TRIANGLE, Color.CYAN);//新增折線C
         mLineChart.addLineToChart("折線D", PointStyle.SQUARE, Color.YELLOW);//新增折線D
+    };
+
+    @Override
+    protected void onResume() //在本頁面onStart()之後設定為繪圖所在的頁面
+    {
+        super.onResume();
+
+        Log.e("onResume","onResume");
+//        //設定圖表顯示頁面為本頁面
+//        mLineChart.setChartViewActivity(this);
+//
+//        //新增4條折線
+//        mLineChart.addLineToChart("折線A", PointStyle.CIRCLE, Color.BLUE);//新增折線A
+//        mLineChart.addLineToChart("折線B", PointStyle.DIAMOND, Color.GREEN);//新增折線B
+//        mLineChart.addLineToChart("折線C", PointStyle.TRIANGLE, Color.CYAN);//新增折線C
+//        mLineChart.addLineToChart("折線D", PointStyle.SQUARE, Color.YELLOW);//新增折線D
 
     }
 
